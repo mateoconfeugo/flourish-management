@@ -1,0 +1,39 @@
+<html>
+  <body>
+    <div class="adminBox clearboth">
+      <div class="header" style="*z-index: -1">
+	<div class="number">2</div>
+	<div class="caption">Group Memberships</div>
+	<div class="rightText">&nbsp;</div>
+      </div>
+      <div class="clearboth border">
+
+	<script type="text/javascript">
+	  doubleLists[doubleLists.length] = ["rem_grp", "add_grp"];
+	</script>
+	<table width="578" border="0" cellpadding="0" cellspacing="0" class="dlman">
+	  <tbody><tr>
+	      <td width="50"><img src="/media/images/spacer.gif" width="50" height="1"></td>
+              <td width="230" align="center"><span class="label">Available Groups</span></td><td width="18" rowspan="3"><img src="/media/images/spacer.gif" width="18" height="1"></td>
+	      <td align="center" width="230"><span class="label">Current Groups</span></td>
+              <td width="50"><img src="/media/images/spacer.gif" width="50" height="1"></td></tr>
+
+	    <tr>
+	      <td>&nbsp;</td><td valign="top" align="right">
+		<select name="rem_grp" id="rem_grp" size="10" multiple="multiple">
+		  
+		</select>
+	      </td>
+	      <td valign="top">
+		<select name="add_grp" id="add_grp" size="10" multiple="multiple">
+		  <option value="27" disabled="disabled">All Element Types</option>
+
+		</select>
+	      </td>
+	      <td>&nbsp;</td>
+	    </tr>
+	    <tr class="dlbtns"><td>&nbsp;</td><td align="right">  <a href="#" onclick="move_item('cont_profile', 'rem_grp', 'add_grp'); return false;"><img src="/media/images/en_us/add_to_list_lgreen.gif" border="0"></a> </td><td align="left">  <a href="#" onclick="move_item('cont_profile', 'add_grp', 'rem_grp'); return false;"><img src="/media/images/en_us/remove_from_list_red.gif" border="0"></a> </td><td>&nbsp;</td></tr> </tbody></table>
+      </div>
+    </div>
+  </body>
+</html>

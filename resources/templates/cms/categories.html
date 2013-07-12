@@ -1,0 +1,74 @@
+<html>
+ <body>
+<div class="workflowBox clearboth">
+  <div class="header" style="*z-index: -1">
+    <div class="number">3</div>
+    <div class="caption">Categories</div>
+    <div class="rightText">&nbsp;</div>
+  </div>
+  <div class="clearboth border">
+
+<div id="categories">
+    
+<table class="listManager">
+<tbody><tr>
+  <th>URI</th>
+  <th>Name</th>
+  <th class="radio">Primary</th>
+  <th class="checkbox">Delete</th>
+</tr>
+<tr id="category-1062" class="even">
+    <td>
+        /site/landing_site/
+        
+
+<input type="hidden" name="category_id" value="1062">
+    </td>
+    <td>Landing Site</td>
+    <td class="action">
+        <input type="radio" name="primary_category_id" id="primary_category_id" value="1062" checked="checked">
+    </td>
+    <td class="action">
+        <input type="image" name="delete_category" id="delete_category" src="/media/images/en_us/delete_red.gif" title="Delete Category" value="1062" style="display: none" onclick="catListMan.remove(this.parentNode.parentNode); return false">
+    </td>
+  </tr>
+</tbody></table>
+
+<div class="actions">
+<input type="image" name="add_category_button" id="add_category_button" src="/media/images/en_us/add_category_lgreen.gif" title="Add Category" value="Add Category" onclick="catListMan.add('new_category_uri'); return false">
+<input type="text" id="new_category_uri" name="new_category_autocomplete" size="40" autocomplete="off"><img id="category_autocomplete_indicator" src="/media/images/busy_indicator.gif" style="display: none;"><div id="category_autocomplete_choices" class="autocomplete" style="display: none;"></div><span id="new_cat_warning" style="display: none"><img src="/media/images/dialog-warning.gif" alt="Warning"> Unable to add category that does not exist</span>
+<script type="text/javascript">
+// add throbber after Add Category text field
+var throbber = new Element('img', { id: 'category_autocomplete_indicator',
+                                    src: '/media/images/busy_indicator.gif' });
+Element.hide(throbber);
+$('new_category_uri').insert({ after: throbber });
+
+new Ajax.Autocompleter("new_category_uri", "category_autocomplete_choices",
+                       "/widgets/profile/autocomplete_categories.html",
+                       {
+                         onEmpty:    function() { Element.show('new_cat_warning'); },
+                         onNotEmpty: function() { Element.hide('new_cat_warning') },
+                         onEnter:    function() { catListMan.add('new_category_uri') },
+                         minChars:   1,
+                         indicator:  'category_autocomplete_indicator',
+                         parameters: 'site_id=1151&key=story'
+                       }
+);
+</script>
+</div>
+
+<script type="text/javascript">
+var catListMan = new AssociationListManager('categories', {
+    type: 'category',
+    uri: '/widgets/story_prof/list_categories.html'
+});
+</script>
+
+
+</div>
+
+  </div>
+</div>
+</body>
+</html>

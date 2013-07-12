@@ -1,0 +1,108 @@
+<html>
+  <body>
+    <div class="adminBox clearboth">
+      <div class="header" style="*z-index: -1">
+	<div class="number">7</div>
+	<div class="caption">Add New Field</div>
+	<div class="rightText">&nbsp;</div>
+      </div>
+      <div class="clearboth border">
+	<div id="formBuilder" class="clearboth">
+	  <ul class="types">
+	    <li><input type="radio" name="fbSwitcher" id="formElementText" value="text" onclick="formBuilder.switchType('text')" checked="checked">
+	      <label for="formElementText">Text Box</label>
+	    </li>
+	    <li><input type="radio" name="fbSwitcher" id="formElementRadio" value="radio" onclick="formBuilder.switchType('radio')">
+	      <label for="formElementRadio">Radio Buttons</label>
+	    </li>
+	    <li><input type="radio" name="fbSwitcher" id="formElementCheckbox" value="checkbox" onclick="formBuilder.switchType('checkbox')">
+	      <label for="formElementCheckbox">Checkbox</label>
+	    </li>
+	    <li><input type="radio" name="fbSwitcher" id="formElementPulldown" value="pulldown" onclick="formBuilder.switchType('pulldown')">
+	      <label for="formElementPulldown">Pulldown</label>
+	    </li>
+	    <li><input type="radio" name="fbSwitcher" id="formElementSelect" value="select" onclick="formBuilder.switchType('select')">
+	      <label for="formElementSelect">Select</label>
+	    </li>
+	    <li><input type="radio" name="fbSwitcher" id="formElementCodeSelect" value="codeselect" onclick="formBuilder.switchType('codeselect')">
+	      <label for="formElementCodeSelect">Code Select</label>
+	    </li>
+	    <li><input type="radio" name="fbSwitcher" id="formElementTextarea" value="textarea" onclick="formBuilder.switchType('textarea')">
+	      <label for="formElementTextarea">Text Area</label>
+	    </li>
+	    <li><input type="radio" name="fbSwitcher" id="formElementDate" value="date" onclick="formBuilder.switchType('date')">
+	      <label for="formElementDate">Date</label>
+	    </li>
+	  </ul>
+
+
+	  <div id="fbDiv" class="fbDiv">
+
+	    <input type="hidden" name="fb_type" id="fb_type" value="text">
+
+	      <dl class="meta">
+		<dt><label for="fb_name">Key Name:</label></dt>
+		<dd><input type="text" name="fb_name" id="fb_name"></dd>
+		
+		<dt><label for="fb_disp">Label:</label></dt>
+		<dd><input type="text" name="fb_disp" id="fb_disp"></dd>
+		
+		<dt class="fb_value"><label for="fb_value">Default Value:</label></dt>
+		<dd class="fb_value"><input type="text" name="fb_value" id="fb_value"></dd>
+		
+		<dt><label for="fb_minOccur">Minimum Occurrence:</label></dt>
+		<dd><input type="text" name="fb_minOccur" id="fb_minOccur" value="0" size="4"></dd>
+		<dt><label for="fb_maxOccur">Maximum Occurrence:</label></dt>
+		<dd><input type="text" name="fb_maxOccur" id="fb_maxOccur" value="0" size="4"></dd>
+		
+	      </dl>
+
+	      <dl class="opts">
+		<dt><label for="fb_vals">Options, Label<br><span class="small">(one per line):</span></label></dt>
+		<dd><textarea rows="5" cols="25" name="fb_vals" id="fb_vals"></textarea></dd>
+	      </dl>    
+
+	      <dl class="size">
+		<dt class="fb_precision"><label for="fb_precision">Precision:</label></dt>
+		<dd class="fb_precision"><select name="fb_precision" id="fb_precision">
+		  <option value="1">Year</option><option value="2">Month</option><option value="3">Day</option><option value="4">Hour</option><option value="5" selected="selected">Minute</option><option value="6">Second</option><option value="7">Millisecond</option><option value="8">Microsecond</option>
+		</select>
+		</dd>
+		
+		<dt class="fb_rows"><label for="fb_rows">Rows:</label></dt>
+		<dd class="fb_rows"><input type="text" name="fb_rows" id="fb_rows" value="4" size="3"></dd>
+		
+		<dt class="fb_cols"><label for="fb_cols">Columns:</label></dt>
+		<dd class="fb_cols"><input type="text" name="fb_cols" id="fb_cols" value="40" size="3"></dd>
+		
+		<dt class="fb_size"><label for="fb_size">Size:</label></dt>
+		<dd class="fb_size"><input type="text" name="fb_size" id="fb_size" size="3" value="32"></dd>
+		
+		<dt class="fb_maxlength"><label for="fb_maxlength">Max size:</label></dt>
+		<dd class="fb_maxlength"><input type="text" name="fb_maxlength" id="fb_maxlength" value="0" size="4"></dd>
+		
+		<dt class="fb_allowMultiple"><label for="fb_allowMultiple">Allow multiple?</label></dt>
+		<dd class="fb_allowMultiple"><input type="checkbox" name="fb_allowMultiple" id="fb_allowMultiple"></dd>
+	      </dl>
+
+	      <dl class="position">
+		<dt><label for="fb_position">Position:</label></dt>
+		<dd><select name="fb_position" id="fb_position">
+		  <option value="1" selected="selected">1</option>
+
+		</select>
+		</dd>
+	      </dl>
+	      
+	      <div class="submit">
+		<input type="image" src="/media/images/en_us/add_to_form_lgreen.gif" title="Add to Form" onclick="formBuilder.submit('', 'cont_profile', 'add')">
+		</div>
+
+	      </div>
+
+	    </div>
+
+	  </div>
+	</div>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<div class="nested_wizard">
+     <div id="nav_dest"></div>
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <ul>
+	[% FOREACH view IN views %]
+          <li><a href="#[% view.data.category %]" data-toggle="tab">[% view.data.title %]</a></li>
+	[% END %]
+        </ul>
+      </div>
+    </div>
+  </div>
+  [% INCLUDE tab_content %]
+</div>
+
+
+[% BLOCK tab_content %]
+  <div class="tab-content">
+    [% INCLUDE navigation %]
+    [% FOREACH view IN views %]
+      <div class="tab-pane" id="[% view.data.category %]"></div>
+    [% END %]
+
+  </div>	
+[% END %]
+
+[% BLOCK navigation %]
+  <ul id="wizard_pager" class="pager wizard">
+<!--    <li id='first' class="previous first"><a href="javascript:;">First</a></li> -->
+    <li id='previous' class="previous"><a href="javascript:;">Previous</a></li>
+<!--    <li id='last' class="next last"><a href="javascript:;">Last</a></li> -->
+    <li id='next' class="next"><a href="javascript:;">Next</a></li>
+    <li id='finish' class="next finish" style="display:none;"><a href="javascript:;">Finish</a></li>
+   </ul>
+[% END %]

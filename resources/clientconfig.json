@@ -1,0 +1,39 @@
+{
+ "clientConfig" : {
+      "models" : {
+         "dispenser" : {
+            "url" : "http://localhost:3000/dispenser/volume"
+         },
+         "mixer" : {
+            "url" : "http://localhost:3000/mixer"
+         },
+         "recipe" : {
+            "url" : "http://localhost:3000/api/rest/recipe"
+         },
+         "plant" : {
+            "url" : "http://localhost:3000/api/rest/plant"
+         },
+         "plant_type" : {
+            "url" : "http://localhost:3000/api/rest/plant_type"
+         }
+      },
+      "views" : {
+         "RecipeBuilder" : {
+            "host_element" : "#hero-unit",
+            "template" : "recipe_builder.tt",
+            "url" : "http://localhost:3000/api/rest/recipe"
+         },
+         "PlantCatalog" : {
+            "host_element" : "#stage",
+            "template" : "plant_catalog.tt",
+         },
+         "Plant" : {
+            "host_element" : "#stage",
+         },
+	 "GrowBrowser": {
+            "host_element" : "#stage",
+         }
+      },
+      "host_element" : "stage"
+   }
+}

@@ -1,0 +1,40 @@
+<html>
+  <body>
+    <div class="adminBox clearboth">
+      <div class="header" style="*z-index: -1">
+	<div class="number">3</div>
+	<div class="caption">Sites</div>
+	<div class="rightText">&nbsp;</div>
+      </div>
+      <div class="clearboth border">
+	<!-- table header display -->
+	<table class="listManager">
+	  <tbody><tr>
+	      <th>Name</th>
+	      <th>Description</th>
+	      <th>Primary Output Channel</th>
+	      <th colspan="1"></th>  </tr>
+	    <tr class="even">
+	      <td class="selected name">Patient Comfort Services</td>
+	      <td class="description">Top level object in the form of a web site that links all the elements of the flourish online system together for Patient Comfort Services</td>
+	      <td class="primary">
+		<input type="hidden" name="select_object|save_selected_id_cb" value="output_channel">
+		<select name="primary_oc_site_1151" id="primary_oc_site_1151" size="1">
+                  <option value="1035" selected="selected">HTML</option>
+                  <option value="1036">JSON</option>
+		</select>
+	      </td>
+	      <td class="action"><input type="checkbox" name="rem_site" value="1151">Delete</td>
+	    </tr>
+	</tbody></table>
+	<div class="actions">
+	  <input type="hidden" name="select_object|save_selected_id_cb" value="site">
+          <select name="formBuilder|add_site_id_cb" id="formBuilder|add_site_id_cb" size="1" onchange="submit()">
+            <option value="" selected="selected">Add Site</option>
+            <option value="100">Default Site</option>
+	  </select>
+	</div>
+      </div>
+    </div>
+  </body>
+</html>

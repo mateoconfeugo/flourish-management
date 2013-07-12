@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="title" content="SiteBuilder - For Optimized Landing Sites" />
+    <meta name="description" content="LayoutIt! is a drag-and-drop interface builder for Bootstrap that wants to be the kick-off for your front-end developments." />
+    <meta name="keywords" content="" />
+    <meta name="language" content="en" />
+    <script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script>
+    <title>SiteBuilder - For Optimized Landing Sites</title>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="css/layoutit.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+	<script src="/js/html5shiv.js"></script>
+	<![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/img/favicon.png">
+  </head>
+  <body class="edit">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+	<div class="container-fluid">
+	  <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	  </button>
+	  <div class="nav-collapse collapse">
+	    <ul class="nav" id="menu-layoutit">
+	      <li class="divider-vertical"></li>
+	      <li>
+		<div class="btn-group" data-toggle="buttons-radio">
+		  <button type="button" id="edit" class="active btn btn-small btn-primary"><i class="icon-edit icon-white"></i> Edit</button>
+		  <button type="button" class="btn btn-small btn-primary" id="devpreview"><i class="icon-eye-close icon-white"></i> Developer view</button>
+		  <button type="button" class="btn btn-small btn-primary" id="style-view"><i class="icon-eye-close icon-white"></i>CSS</button>
+		  <button type="button" class="btn btn-small btn-primary" id="sourcepreview"><i class="icon-eye-open icon-white"></i> Preview</button>
+		</div>
+		<div class="btn-group" data-toggle="buttons-radio">
+		  <button type="button" class="btn btn-small btn-primary" id="content-view"><i class="icon-eye-open icon-white"></i>Content View</button>
+		  <button type="button" class="btn btn-small btn-primary" id="document-view"><i class="icon-eye-open icon-white"></i>Document View</button>
+		</div>
+		<div class="btn-group">
+		  <button type="button" class="btn btn-small btn-primary" data-target="#downloadModal" rel="/build/downloadModal" role="button" data-toggle="modal" data-target="#downloadModal"><i class="icon-chevron-down icon-white"></i>Download</button>
+		  <button class="btn btn-small btn-primary" href="/share/index" role="button" data-toggle="modal" data-target="#shareModal"><i class="icon-share icon-white"></i> Share or Save</button>
+		  <button class="btn btn-small btn-primary" href="#clear" id="clear" ><i class="icon-trash icon-white"></i> Clear</button>
+		</div>
+	      </li>
+	    </ul>
+	  </div>
+	</div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row-fluid">
+	<div class="">
+	  <div class="sidebar-nav">
+	    <ul class="nav nav-list accordion-group">
+	      <li class="nav-header">
+		<div class="pull-right popover-info"><i class="icon-question-sign "></i> 
+		  <div class="popover fade right"><div class="arrow"></div> 
+ 		    <h3 class="popover-title">Help</h3> 
+ 		    <div class="popover-content">To change the column configuration you can edit the different values in the input (they should add 12). If you need more info please visit <a target="_blank" href="http://twitter.github.io/bootstrap/scaffolding.html#gridSystem">Bootstrap grid system.</a></div></div> 
+		</div> 
+		<i class="icon-plus icon-white"></i>  Grid system
+	      </li>
+	      <li class="rows" id="estRows">
+		<div class="lyrow">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <div class="preview"><input type="text" value="12"></div>
+		  <div class="view">
+		    <div class="row-fluid clearfix">
+		      <div class="span12 column"></div>
+		    </div>
+		  </div>
+		</div>
+		<div class="lyrow">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <div class="preview"><input type="text" value="6 6"></div>
+		  <div class="view">
+		    <div class="row-fluid clearfix">
+		      <div class="span6 column"></div>
+		      <div class="span6 column"></div>
+		    </div>
+		  </div>
+		</div>
+		<div class="lyrow">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <div class="preview"><input type="text" value="8 4"></div>
+		  <div class="view">
+		    <div class="row-fluid clearfix">
+		      <div class="span8 column"></div>
+		      <div class="span4 column"></div>
+		    </div>
+		  </div>
+		</div>
+		<div class="lyrow">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <div class="preview"><input type="text" value="4 4 4"></div>
+		  <div class="view">
+		    <div class="row-fluid clearfix">
+		      <div class="span4 column"></div>
+		      <div class="span4 column"></div>
+		      <div class="span4 column"></div>
+		    </div>
+		  </div>
+		</div>
+		<div class="lyrow">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <div class="preview"><input type="text" value="2 6 4"></div>
+		  <div class="view">
+		    <div class="row-fluid clearfix">
+		      <div class="span2 column"></div>
+		      <div class="span6 column"></div>
+		      <div class="span4 column"></div>
+		    </div>
+		  </div>
+		</div>
+	      </li>
+	    </ul>
+	    <ul class="nav nav-list accordion-group">
+	      <li class="nav-header"><i class="icon-plus icon-white"></i> Base CSS
+		<div class="pull-right popover-info"><i class="icon-question-sign "></i> 
+		  <div class="popover fade right"><div class="arrow"></div> 
+ 		    <h3 class="popover-title">Help</h3> 
+ 		    <div class="popover-content">Drag &amp; Drop the elements inside the columns where you want to insert it. And from there, you can configure the style of that element. If you need more info please visit <a target="_blank" href="http://twitter.github.io/bootstrap/base-css.html">Base CSS.</a></div></div> 
+		</div>
+	      </li>
+	      <li class="boxes" id="elmBase">
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">
+		    <span class="btn-group">
+		      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="build#">Align <span class="caret"></span></a>
+		      <ul class="dropdown-menu">
+			<li class="active" ><a href="build#" rel="">Default</a></li>
+			<li class="" ><a href="build#" rel="text-left">Left</a></li>
+			<li class="" ><a href="build#" rel="text-center">Center</a></li>
+			<li class="" ><a href="build#" rel="text-right">Right</a></li>
+		      </ul>
+		    </span>
+		    <span class="btn-group">
+		      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="build#">Emphasis <span class="caret"></span></a>
+		      <ul class="dropdown-menu">
+			<li class="active" ><a href="build#" rel="">Default</a></li>
+			<li class="" ><a href="build#" rel="muted">Muted</a></li>
+			<li class="" ><a href="build#" rel="text-warning">Warning</a></li>
+			<li class="" ><a href="build#" rel="text-error">Error</a></li>
+			<li class="" ><a href="build#" rel="text-info">Info</a></li>
+			<li class="" ><a href="build#" rel="text-success">Success</a></li>
+		      </ul>
+		    </span>
+		  </span>
+		  <div class="preview">Title</div>
+		  <div class="view">
+		    <h3 contenteditable="true">h3. Lorem ipsum dolor sit amet.</h3>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">
+		    <span class="btn-group">
+		      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="build#">Align <span class="caret"></span></a>
+		      <ul class="dropdown-menu">
+			<li class="active" ><a href="build#" rel="">Default</a></li>
+			<li class="" ><a href="build#" rel="text-left">Left</a></li>
+			<li class="" ><a href="build#" rel="text-center">Center</a></li>
+			<li class="" ><a href="build#" rel="text-right">Right</a></li>
+		      </ul>
+		    </span>
+		    <span class="btn-group">
+		      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="build#">Emphasis <span class="caret"></span></a>
+		      <ul class="dropdown-menu">
+			<li class="active" ><a href="build#" rel="">Default</a></li>
+			<li class="" ><a href="build#" rel="muted">Muted</a></li>
+			<li class="" ><a href="build#" rel="text-warning">Warning</a></li>
+			<li class="" ><a href="build#" rel="text-error">Error</a></li>
+			<li class="" ><a href="build#" rel="text-info">Info</a></li>
+			<li class="" ><a href="build#" rel="text-success">Success</a></li>
+		      </ul>
+		    </span>
+		    
+		    <a class="btn btn-mini" href="build#" rel="lead">Lead</a>
+		  </span>
+		  <div class="preview">Paragraph</div>
+		  <div class="view">
+		    <p contenteditable="true">Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu. </small></p>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <div class="preview">Address</div>
+		  <div class="view">
+		    <address contenteditable="true">
+		      <strong>Twitter, Inc.</strong><br>
+		      795 Folsom Ave, Suite 600<br>
+		      San Francisco, CA 94107<br>
+		      <abbr title="Phone">P:</abbr> (123) 456-7890
+		    </address>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">		  
+		    <a class="btn btn-mini" href="build#" rel="pull-right">Pull right</a>
+		  </span>
+		  <div class="preview">Blockquote</div>
+		  <div class="view clearfix">
+		    <blockquote contenteditable="true">
+		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+		      <small>Someone famous <cite title="Source Title">Source Title</cite></small>
+		    </blockquote>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">		  
+		    <a class="btn btn-mini" href="build#" rel="unstyled">Unstyled</a>
+		    <a class="btn btn-mini" href="build#" rel="inline">Inline</a>
+		  </span>
+		  <div class="preview">Unordered List</div>
+		  <div class="view">
+		    <ul contenteditable="true">
+		      <li>Lorem ipsum dolor sit amet</li>
+		      <li>Consectetur adipiscing elit</li>
+		      <li>Integer molestie lorem at massa</li>
+		      <li>Facilisis in pretium nisl aliquet</li>
+		      <li>Nulla volutpat aliquam velit</li>
+		      <li>Faucibus porta lacus fringilla vel</li>
+		      <li>Aenean sit amet erat nunc</li>
+		      <li>Eget porttitor lorem</li>
+		    </ul>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">		  
+		    <a class="btn btn-mini" href="build#" rel="unstyled">Unstyled</a>
+		    <a class="btn btn-mini" href="build#" rel="inline">Inline</a>
+		  </span>
+		  <div class="preview">Ordered List</div>
+		  <div class="view">
+		    <ol contenteditable="true">
+		      <li>Lorem ipsum dolor sit amet</li>
+		      <li>Consectetur adipiscing elit</li>
+		      <li>Integer molestie lorem at massa</li>
+		      <li>Facilisis in pretium nisl aliquet</li>
+		      <li>Nulla volutpat aliquam velit</li>
+		      <li>Faucibus porta lacus fringilla vel</li>
+		      <li>Aenean sit amet erat nunc</li>
+		      <li>Eget porttitor lorem</li>
+		    </ol>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">		  
+		    <a class="btn btn-mini" href="build#" rel="dl-horizontal">Horizontal</a>
+		  </span>
+		  <div class="preview">Description</div>
+		  <div class="view">
+		    <dl contenteditable="true">
+		      <dt>Description lists</dt>
+		      <dd>A description list is perfect for defining terms.</dd>
+		      <dt>Euismod</dt>
+		      <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+		      <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+		      <dt>Malesuada porta</dt>
+		      <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+		      <dt>Felis euismod semper eget lacinia</dt>
+		      <dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+		    </dl>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">
+		    <span class="btn-group">
+		      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="build#">Style <span class="caret"></span></a>
+		      <ul class="dropdown-menu">
+			<li class="active" ><a href="build#" rel="">Default</a></li>
+			<li class="" ><a href="build#" rel="table-striped">Striped</a></li>
+			<li class="" ><a href="build#" rel="table-bordered">Bordered</a></li>
+		      </ul>
+		    </span>
+		    <a class="btn btn-mini" href="build#" rel="table-hover">Hover</a>
+		    <a class="btn btn-mini" href="build#" rel="table-condensed">Condensed</a>
+		  </span>
+		  <div class="preview">Table</div>
+		  <div class="view">
+		    <table class="table" contenteditable="true">
+		      <thead>
+			<tr>
+			  <th>#</th>
+			  <th>Product</th>
+			  <th>Payment Taken</th>
+			  <th>Status</th>
+			</tr>
+		      </thead>
+		      <tbody>
+      			<tr>
+			  <td>1</td>
+			  <td>TB - Monthly</td>
+			  <td>01/04/2012</td>
+			  <td>Default</td>
+			</tr>
+			<tr class="success">
+			  <td>1</td>
+			  <td>TB - Monthly</td>
+			  <td>01/04/2012</td>
+			  <td>Approved</td>
+			</tr>
+			<tr class="error">
+			  <td>2</td>
+			  <td>TB - Monthly</td>
+			  <td>02/04/2012</td>
+			  <td>Declined</td>
+			</tr>
+			<tr class="warning">
+			  <td>3</td>
+			  <td>TB - Monthly</td>
+			  <td>03/04/2012</td>
+			  <td>Pending</td>
+			</tr>
+			<tr class="info">
+			  <td>4</td>
+			  <td>TB - Monthly</td>
+			  <td>04/04/2012</td>
+			  <td>Call in to confirm</td>
+			</tr>
+		      </tbody>
+		    </table>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">
+		    <a class="btn btn-mini" href="build#" rel="form-inline">Inline</a>
+		  </span>
+		  <div class="preview">Form</div>
+		  <div class="view">
+		    <form>
+		      <fieldset>
+			<legend contenteditable="true">Legend</legend>
+			<label contenteditable="true">Label name</label>
+			<input type="text" placeholder="Type something…">
+			<span class="help-block" contenteditable="true">Example block-level help text here.</span>
+			<label class="checkbox">
+			  <input type="checkbox" contenteditable="true"> Check me out
+			</label>
+			<button type="submit" class="btn" contenteditable="true">Submit</button>
+		      </fieldset>
+		    </form>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">
+		    <a class="btn btn-mini" href="build#" rel="form-inline">Inline</a>
+		  </span>
+		  <div class="preview">Search Form</div>
+		  <div class="view">
+		    <form class="form-search">
+		      <input type="text" class="input-medium search-query">
+		      <button type="submit" class="btn" contenteditable="true">Search</button>
+		    </form>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">
+		  </span>
+		  <div class="preview">Horizontal Form</div>
+		  <div class="view">
+		    <form class="form-horizontal">
+		      <div class="control-group">
+			<label class="control-label" for="inputEmail" contenteditable="true">Email</label>
+			<div class="controls">
+			  <input type="text" id="inputEmail" placeholder="Email">
+			</div>
+		      </div>
+		      <div class="control-group">
+			<label class="control-label" for="inputPassword" contenteditable="true">Password</label>
+			<div class="controls">
+			  <input type="password" id="inputPassword" placeholder="Password">
+			</div>
+		      </div>
+		      <div class="control-group">
+			<div class="controls">
+			  <label class="checkbox" contenteditable="true">
+			    <input type="checkbox"> Remember me
+			  </label>
+			  <button type="submit" class="btn" contenteditable="true">Sign in</button>
+			</div>
+		      </div>
+		    </form>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">
+		    <span class="btn-group">
+		      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="build#">Styles <span class="caret"></span></a>
+		      <ul class="dropdown-menu">
+			<li class="active" ><a href="build#" rel="">Default</a></li>
+			<li class="" ><a href="build#" rel="btn-primary">Primary</a></li>
+			<li class="" ><a href="build#" rel="btn-info">Info</a></li>
+			<li class="" ><a href="build#" rel="btn-success">Success</a></li>
+			<li class="" ><a href="build#" rel="btn-warning">Warning</a></li>
+			<li class="" ><a href="build#" rel="btn-danger">Danger</a></li>
+			<li class="" ><a href="build#" rel="btn-inverse">Inverse</a></li>
+			<li class="" ><a href="build#" rel="btn-link">Link</a></li>
+		      </ul>
+		    </span>
+		    <span class="btn-group">
+		      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="build#">Size <span class="caret"></span></a>
+		      <ul class="dropdown-menu">
+			<li class="" ><a href="build#" rel="btn-large">Large</a></li>
+			<li class="active" ><a href="build#" rel="">Default</a></li>
+			<li class="" ><a href="build#" rel="btn-small">Small</a></li>
+			<li class="" ><a href="build#" rel="btn-mini">Mini</a></li>
+		      </ul>
+		    </span>
+		    
+		    <a class="btn btn-mini" href="build#" rel="btn-block">Block</a>
+		    <a class="btn btn-mini" href="build#" rel="disabled">Disabled</a>
+		  </span>
+		  <div class="preview">Button</div>
+		  <div class="view">
+		    <button class="btn" type="button" contenteditable="true">Button</button>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">
+		    <span class="btn-group">
+		      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="build#">Styles <span class="caret"></span></a>
+		      <ul class="dropdown-menu">
+			<li class="active" ><a href="build#" rel="">Default</a></li>
+			<li class="" ><a href="build#" rel="btn-primary">Primary</a></li>
+			<li class="" ><a href="build#" rel="btn-info">Info</a></li>
+			<li class="" ><a href="build#" rel="btn-success">Success</a></li>
+			<li class="" ><a href="build#" rel="btn-warning">Warning</a></li>
+			<li class="" ><a href="build#" rel="btn-danger">Danger</a></li>
+			<li class="" ><a href="build#" rel="btn-inverse">Inverse</a></li>
+			<li class="" ><a href="build#" rel="btn-link">Link</a></li>
+		      </ul>
+		    </span>
+		    <span class="btn-group">
+		      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="build#">Size <span class="caret"></span></a>
+		      <ul class="dropdown-menu">
+			<li class="" ><a href="build#" rel="btn-large">Large</a></li>
+			<li class="active" ><a href="build#" rel="">Default</a></li>
+			<li class="" ><a href="build#" rel="btn-small">Small</a></li>
+			<li class="" ><a href="build#" rel="btn-mini">Mini</a></li>
+		      </ul>
+		    </span>
+		    
+		    <a class="btn btn-mini" href="build#" rel="btn-block">Block</a>
+		    <a class="btn btn-mini" href="build#" rel="disabled">Disabled</a>
+		  </span>
+		  <div class="preview">Anchor Button</div>
+		  <div class="view">
+		    <a href="build#" class="btn" type="button" contenteditable="true">Button</a>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">
+		    <span class="btn-group">
+		      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="build#">Styles <span class="caret"></span></a>
+		      <ul class="dropdown-menu">
+			<li class="active" ><a href="build#" rel="">Default</a></li>
+			<li class="" ><a href="build#" rel="img-rounded">Rounded</a></li>
+			<li class="" ><a href="build#" rel="img-circle">Circle</a></li>
+			<li class="" ><a href="build#" rel="img-polaroid">Polaroid</a></li>
+		      </ul>
+		    </span>
+		  </span>
+		  <div class="preview">Image</div>
+		  <div class="view">
+		    <img alt="140x140" src="http://lorempixel.com/140/140/">
+		  </div>
+		</div>
+	      </li>
+	    </ul>
+
+	    <ul class="nav nav-list accordion-group">
+	      <li class="nav-header"><i class="icon-plus icon-white"></i> Components <div class="pull-right popover-info"><i class="icon-question-sign "></i> 
+		  <div class="popover fade right"><div class="arrow"></div> 
+ 		    <h3 class="popover-title">Help</h3> 
+ 		    <div class="popover-content">Drag &amp; Drop the elements inside the columns where you want to insert it. And from there, you can configure the style of that component. If you need more info please visit  <a target="_blank" href="http://twitter.github.io/bootstrap/components.html">Components.</a></div></div> 
+		</div>
+	      </li>
+	      <li class="boxes" id="elmComponents">
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">
+		    <span class="btn-group">
+		      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="build#">Orientation <span class="caret"></span></a>
+		      <ul class="dropdown-menu">
+			<li class="active" ><a href="build#" rel="">Default</a></li>
+			<li class="" ><a href="build#" rel="btn-group-vertical">Vertical</a></li>
+		      </ul>
+		    </span>
+		  </span>
+		  <div class="preview">Button Group</div>
+		  <div class="view">
+		    <div class="btn-group">
+		      <button class="btn" type="button"><i class="icon-align-left"></i></button>
+		      <button class="btn" type="button"><i class="icon-align-center"></i></button>
+		      <button class="btn" type="button"><i class="icon-align-right"></i></button>
+		      <button class="btn" type="button"><i class="icon-align-justify"></i></button>
+		    </div>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">
+		    <a class="btn btn-mini" href="build#" rel="dropup">Dropup</a>
+		  </span>
+		  <div class="preview">Button Dropdowns</div>
+		  <div class="view">
+		    <div class="btn-group">
+		      <button class="btn" contenteditable="true">Action</button>
+		      <button data-toggle="dropdown" class="btn dropdown-toggle"><span class="caret"></span></button>
+		      <ul class="dropdown-menu" contenteditable="true">
+			<li><a href="build#">Action</a></li>
+			<li><a href="build#">Another action</a></li>
+			<li><a href="build#">Something else here</a></li>
+			<li class="divider"></li>
+			<li class="dropdown-submenu">
+			  <a tabindex="-1" href="build#">More options</a>
+			  <ul class="dropdown-menu">
+			    <li><a href="build#">Action</a></li>
+			    <li><a href="build#">Another action</a></li>
+			    <li><a href="build#">Something else here</a></li>
+			  </ul>
+			</li>
+		      </ul>
+		    </div>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">
+		    <span class="btn-group">
+		      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="build#">Styles <span class="caret"></span></a>
+		      <ul class="dropdown-menu">
+			<li class="" ><a href="build#" rel="nav-tabs">Default</a></li>
+			<li class="" ><a href="build#" rel="nav-pills">Pills</a></li>
+		      </ul>
+		    </span>
+		    <a class="btn btn-mini" href="build#" rel="nav-stacked">Stacked</a>
+		  </span>
+		  <div class="preview">Navs</div>
+		  <div class="view">
+		    <ul class="nav nav-tabs" contenteditable="true">
+		      <li class="active"><a href="build#">Home</a></li>
+		      <li><a href="build#">Profile</a></li>
+		      <li class="disabled"><a href="build#">Messages</a></li>
+		      <li class="dropdown pull-right">
+			<a href="build#" data-toggle="dropdown" class="dropdown-toggle">Dropdown <b class="caret"></b></a>
+			<ul class="dropdown-menu">
+			  <li><a href="build#">Action</a></li>
+			  <li><a href="build#">Another action</a></li>
+			  <li><a href="build#">Something else here</a></li>
+			  <li class="divider"></li>
+			  <li><a href="build#">Separated link</a></li>
+			</ul>
+		      </li>
+		    </ul>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">
+		    <a class="btn btn-mini" href="build#" rel="well">Well</a>
+		  </span>
+		  <div class="preview">Nav List</div>
+		  <div class="view">
+		    <ul class="nav nav-list" contenteditable="true">
+		      <li class="nav-header">List header</li>
+		      <li class="active"><a href="build#">Home</a></li>
+		      <li><a href="build#">Library</a></li>
+		      <li><a href="build#">Applications</a></li>
+		      <li class="nav-header">Another list header</li>
+		      <li><a href="build#">Profile</a></li>
+		      <li><a href="build#">Settings</a></li>
+		      <li class="divider"></li>
+		      <li><a href="build#">Help</a></li>
+		    </ul>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <div class="preview">Breadcrumb</div>
+		  <div class="view">
+
+		    <ul class="breadcrumb">
+		      <li><a href="build#" contenteditable="true">Home</a> <span class="divider">/</span></li>
+		      <li><a href="build#" contenteditable="true">Library</a> <span class="divider">/</span></li>
+		      <li class="active" contenteditable="true">Data</li>
+		    </ul>
+
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">
+		    <span class="btn-group">
+		      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="build#">Size <span class="caret"></span></a>
+		      <ul class="dropdown-menu">
+			<li class="" ><a href="build#" rel="pagination-large">Large</a></li>
+			<li class="active" ><a href="build#" rel="">Default</a></li>
+			<li class="" ><a href="build#" rel="pagination-small">Small</a></li>
+			<li class="" ><a href="build#" rel="pagination-mini">Mini</a></li>
+		      </ul>
+		    </span>
+
+		    <span class="btn-group">
+		      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="build#">Position <span class="caret"></span></a>
+		      <ul class="dropdown-menu">
+			<li class="active" ><a href="build#" rel="">Default</a></li>
+			<li class="" ><a href="build#" rel="pagination-centered">Centered</a></li>
+			<li class="" ><a href="build#" rel="pagination-right">Right</a></li>
+		      </ul>
+		    </span>
+		  </span>
+		  <div class="preview">Pagination</div>
+		  <div class="view">
+		    <div class="pagination">
+		      <ul contenteditable="true">
+			<li><a href="build#">Prev</a></li>
+			<li><a href="build#">1</a></li>
+			<li><a href="build#">2</a></li>
+			<li><a href="build#">3</a></li>
+			<li><a href="build#">4</a></li>
+			<li><a href="build#">5</a></li>
+			<li><a href="build#">Next</a></li>
+		      </ul>
+		    </div>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">
+		    <span class="btn-group">
+		      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="build#">Styles <span class="caret"></span></a>
+		      <ul class="dropdown-menu">
+			<li class="active" ><a href="build#" rel="">Default</a></li>
+			<li class="" ><a href="build#" rel="label-success">Success</a></li>
+			<li class="" ><a href="build#" rel="label-warning">Warning</a></li>
+			<li class="" ><a href="build#" rel="label-important">Important</a></li>
+			<li class="" ><a href="build#" rel="label-info">Info</a></li>
+			<li class="" ><a href="build#" rel="label-inverse">Inverse</a></li>
+		      </ul>
+		    </span>
+		  </span>
+		  <div class="preview">Label</div>
+		  <div class="view">
+		    <span class="label" contenteditable="true">Label</span>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">
+		    <span class="btn-group">
+		      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="build#">Styles <span class="caret"></span></a>
+		      <ul class="dropdown-menu">
+			<li class="active" ><a href="build#" rel="">Default</a></li>
+			<li class="" ><a href="build#" rel="badge-success">Success</a></li>
+			<li class="" ><a href="build#" rel="badge-warning">Warning</a></li>
+			<li class="" ><a href="build#" rel="badge-important">Important</a></li>
+			<li class="" ><a href="build#" rel="badge-info">Info</a></li>
+			<li class="" ><a href="build#" rel="badge-inverse">Inverse</a></li>
+		      </ul>
+		    </span>
+		  </span>
+		  <div class="preview">Badge</div>
+		  <div class="view">
+		    <span class="badge" contenteditable="true">1</span>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">
+		    <a class="btn btn-mini" href="build#" rel="well">Well</a>
+		  </span>
+		  <div class="preview">Hero Unit</div>
+		  <div class="view">
+		    <div class="hero-unit" contenteditable="true">
+		      <h1>Hello, world!</h1>
+		      <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+		      <p><a class="btn btn-primary btn-large" href="build#">Learn more &raquo;</a></p>
+		    </div>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <div class="preview">Page Header</div>
+		  <div class="view">
+		    <div class="page-header">
+    		      <h1 contenteditable="true">Example page header <small>Subtext for header</small></h1>
+		    </div>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <div class="preview">Text</div>
+		  <div class="view">
+		    <h2 contenteditable="true">Heading</h2>
+		    <p contenteditable="true">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+		    <p><a class="btn" href="build#" contenteditable="true">View details &raquo;</a></p>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <div class="preview">Thumbnails</div>
+		  <div class="view">
+		    <ul class="thumbnails">
+		      <li class="span4">
+			<div class="thumbnail">
+			  <img alt="300x200" src="http://lorempixel.com/600/200/people">
+			  <div class="caption" contenteditable="true">
+			    <h3>Thumbnail label</h3>
+			    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+			    <p><a class="btn btn-primary" href="build#">Action</a> <a class="btn" href="build#">Action</a></p>
+			  </div>
+			</div>
+		      </li>
+		      <li class="span4">
+			<div class="thumbnail">
+			  <img alt="300x200" src="http://lorempixel.com/600/200/city">
+			  <div class="caption" contenteditable="true">
+			    <h3>Thumbnail label</h3>
+			    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+			    <p><a class="btn btn-primary" href="build#">Action</a> <a class="btn" href="build#">Action</a></p>
+			  </div>
+			</div>
+		      </li>
+		      <li class="span4">
+			<div class="thumbnail">
+			  <img alt="300x200" src="http://lorempixel.com/600/200/sports">
+			  <div class="caption" contenteditable="true">
+			    <h3>Thumbnail label</h3>
+			    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+			    <p><a class="btn btn-primary" href="build#">Action</a> <a class="btn" href="build#">Action</a></p>
+			  </div>
+			</div>
+		      </li>
+		    </ul>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">
+		    <span class="btn-group">
+		      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="build#">Colors <span class="caret"></span></a>
+		      <ul class="dropdown-menu">
+			<li class="active" ><a href="build#" rel="">Default</a></li>
+			<li class="" ><a href="build#" rel="progress-info">Info</a></li>
+			<li class="" ><a href="build#" rel="progress-success">Success</a></li>
+			<li class="" ><a href="build#" rel="progress-warning">Warning</a></li>
+			<li class="" ><a href="build#" rel="progress-danger">Danger</a></li>
+		      </ul>
+		    </span>
+
+		    
+		    <a class="btn btn-mini" href="build#" rel="progress-striped">Striped</a>
+		    <a class="btn btn-mini" href="build#" rel="active">Active</a>
+		  </span>
+		  <div class="preview">Progress Bar</div>
+		  <div class="view">
+		    <div class="progress">
+		      <div class="bar" style="width: 60%;"></div>
+		    </div>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">
+		    <a class="btn btn-mini" href="build#" rel="well">well</a>
+		  </span>
+		  <div class="preview">Media Object</div>
+		  <div class="view">
+		    <div class="media">
+		      <a href="build#" class="pull-left">
+			<img src="http://lorempixel.com/64/64/" class="media-object">
+		      </a>
+		      <div class="media-body" contenteditable="true">
+			<h4 class="media-heading">Nested media heading</h4>
+			Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+	      </li>
+	    </ul>
+
+	    <ul class="nav nav-list accordion-group">
+	      <li class="nav-header"><i class="icon-plus icon-white"></i> JavaScript <span class="label label-important">NEW!</span>
+		<div class="pull-right popover-info"><i class="icon-question-sign "></i> 
+		  <div class="popover fade right"><div class="arrow"></div> 
+ 		    <h3 class="popover-title">Help</h3> 
+ 		    <div class="popover-content">Drag &amp; Drop the elements inside the columns where you want to insert it. And from there, you can configure the style of that javascript. If you need more info please visit  <a target="_blank" href="http://twitter.github.io/bootstrap/javascript.html">JavaScript.</a></div></div> 
+		</div>
+	      </li>
+	      <li class="boxes mute" id="elmJS">
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <div class="preview">Modal</div>
+		  <div class="view">
+		    <!-- Button to trigger modal -->
+		    <a id="myModalLink" href="build#myModalContainer" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+		    
+		    <!-- Modal -->
+		    <div id="myModalContainer" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		      <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3 id="myModalLabel">Modal header</h3>
+		      </div>
+		      <div class="modal-body">
+			<p>One fine body…</p>
+		      </div>
+		      <div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+			<button class="btn btn-primary">Save changes</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">
+		    <a class="btn btn-mini" href="build#" rel="navbar-inverse">Inverse</a>
+		    <!--a class="btn btn-mini" href="#" rel="navbar-fixed-top">Navbar fixed top</a-->
+		  </span>
+		  <div class="preview">Navbar</div>
+		  <div class="view">
+
+		    <div class="navbar">
+		      <div class="navbar-inner">
+			<div class="container-fluid">
+			  <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar">
+			    <span class="icon-bar"></span>
+			    <span class="icon-bar"></span>
+			    <span class="icon-bar"></span>
+			  </a>
+			  <a href="build#" class="brand" contenteditable="true">Title</a>
+			  <div class="nav-collapse collapse navbar-responsive-collapse">
+			    <ul class="nav" contenteditable="true">
+			      <li class="active"><a href="build#">Home</a></li>
+			      <li><a href="build#">Link</a></li>
+			      <li><a href="build#">Link</a></li>
+			      <li class="dropdown">
+				<a data-toggle="dropdown" class="dropdown-toggle" href="build#">Dropdown <b class="caret"></b></a>
+				<ul class="dropdown-menu">
+				  <li><a href="build#">Action</a></li>
+				  <li><a href="build#">Another action</a></li>
+				  <li><a href="build#">Something else here</a></li>
+				  <li class="divider"></li>
+				  <li class="nav-header">Nav header</li>
+				  <li><a href="build#">Separated link</a></li>
+				  <li><a href="build#">One more separated link</a></li>
+				</ul>
+			      </li>
+			    </ul>
+			    
+			    <ul class="nav pull-right" contenteditable="true">
+			      <li><a href="build#">Link</a></li>
+			      <li class="divider-vertical"></li>
+			      <li class="dropdown">
+				<a data-toggle="dropdown" class="dropdown-toggle" href="build#">Dropdown <b class="caret"></b></a>
+				<ul class="dropdown-menu">
+				  <li><a href="build#">Action</a></li>
+				  <li><a href="build#">Another action</a></li>
+				  <li><a href="build#">Something else here</a></li>
+				  <li class="divider"></li>
+				  <li><a href="build#">Separated link</a></li>
+				</ul>
+			      </li>
+			    </ul>
+			  </div><!-- /.nav-collapse -->
+			</div>
+		      </div><!-- /navbar-inner -->
+		    </div>
+
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">
+		    <span class="btn-group">
+		      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="build#">Position <span class="caret"></span></a>
+		      <ul class="dropdown-menu">
+			<li class="active" ><a href="build#" rel="">Default</a></li>
+			<li class="" ><a href="build#" rel="tabs-below">Bottom</a></li>
+			<li class="" ><a href="build#" rel="tabs-left">Left</a></li>
+			<li class="" ><a href="build#" rel="tabs-right">Right</a></li>
+		      </ul>
+		    </span>
+		  </span>
+		  <div class="preview">Tabs</div>
+		  <div class="view">
+		    <div class="tabbable" id="myTabs"> <!-- Only required for left/right tabs -->
+		      <ul class="nav nav-tabs">
+			<li class="active"><a href="build#tab1" data-toggle="tab" contenteditable="true">Section 1</a></li>
+			<li><a href="build#tab2" data-toggle="tab" contenteditable="true">Section 2</a></li>
+		      </ul>
+		      <div class="tab-content">
+			<div class="tab-pane active" id="tab1">
+			  <p contenteditable="true">I'm in Section 1.</p>
+			</div>
+			<div class="tab-pane" id="tab2">
+			  <p contenteditable="true">Howdy, I'm in Section 2.</p>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <span class="configuration">
+		    <span class="btn-group">
+		      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="build#">Styles <span class="caret"></span></a>
+		      <ul class="dropdown-menu">
+			<li class="active" ><a href="build#" rel="">Default</a></li>
+			<li class="" ><a href="build#" rel="alert-info">Info</a></li>
+			<li class="" ><a href="build#" rel="alert-error">Error</a></li>
+			<li class="" ><a href="build#" rel="alert-success">Success</a></li>
+		      </ul>
+		    </span>
+		  </span>
+		  <div class="preview">Alerts</div>
+		  <div class="view">
+		    <div class="alert" contenteditable="true">
+		      <button type="button" class="close" data-dismiss="alert">&times;</button>
+		      <h4>Alert!</h4>
+		      <strong>Warning!</strong> Best check yo self, you're not looking too good.
+		    </div>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <div class="preview">Accordion</div>
+		  <div class="view">
+		    <div class="accordion" id="myAccordion">
+		      <div class="accordion-group">
+			<div class="accordion-heading">
+			  <a class="accordion-toggle" data-toggle="collapse" data-parent="#myAccordion" href="build#collapseOne">
+			    Collapsible Group Item #1
+			  </a>
+			</div>
+			<div id="collapseOne" class="accordion-body collapse in">
+			  <div class="accordion-inner">
+			    Anim pariatur cliche...
+			  </div>
+			</div>
+		      </div>
+		      <div class="accordion-group">
+			<div class="accordion-heading">
+			  <a class="accordion-toggle" data-toggle="collapse" data-parent="#myAccordion" href="build#collapseTwo">
+			    Collapsible Group Item #2
+			  </a>
+			</div>
+			<div id="collapseTwo" class="accordion-body collapse">
+			  <div class="accordion-inner">
+			    Anim pariatur cliche...
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div class="box box-element">
+		  <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		  <span class="drag label"><i class="icon-move"></i>drag</span>
+		  <div class="preview">Carousel</div>
+		  <div class="view">
+		    <div class="carousel slide" id="myCarousel">
+		      <ol class="carousel-indicators">
+			<li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+			<li data-slide-to="1" data-target="#myCarousel" class=""></li>
+			<li data-slide-to="2" data-target="#myCarousel" class=""></li>
+		      </ol>
+		      <div class="carousel-inner">
+			<div class="item active">
+			  <img alt="" src="http://lorempixel.com/1600/500/sports/1">
+			  <div class="carousel-caption">
+			    <h4>First Thumbnail label</h4>
+			    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+			  </div>
+			</div>
+			<div class="item">
+			  <img alt="" src="http://lorempixel.com/1600/500/sports/2">
+			  <div class="carousel-caption">
+			    <h4>Second Thumbnail label</h4>
+			    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+			  </div>
+			</div>
+			<div class="item">
+			  <img alt="" src="http://lorempixel.com/1600/500/sports/3">
+			  <div class="carousel-caption">
+			    <h4>Third Thumbnail label</h4>
+			    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+			  </div>
+			</div>
+		      </div>
+		      <a data-slide="prev" href="build#myCarousel" class="left carousel-control">‹</a>
+		      <a data-slide="next" href="build#myCarousel" class="right carousel-control">›</a>
+		    </div>		
+		  </div>
+		</div>
+	      </li>
+	    </ul>
+	    <ul class="nav nav-list accordion-group">
+	      <li class="nav-header"><i class="icon-plus icon-white"></i>Content Containers</li>
+	      <li class="boxes mute" id="elmComm">
+		<div class="preview">Coming soon...</div>
+	      </li>
+	    </ul>
+	  </div>
+	</div>
+	<!--/span-->
+	<div class="demo">
+	  <div class="lyrow drop-zone">
+	    <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+	    <span class="drag label"><i class="icon-move"></i>drag</span>
+	    <div class="preview">9 3</div>
+	    <div class="view">
+	      <div class="row-fluid clearfix">
+		<div class="span12 column">
+		  <div class="box box-element">
+		    <a href="build#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
+		    <span class="drag label"><i class="icon-move"></i>drag</span>
+		    <span class="configuration">
+		      <a class="btn btn-mini" href="build#" rel="well">Well</a>
+		    </span>
+		    <div class="preview">Hero Unit</div>
+		    <div class="view">
+		      <div class="hero-unit" contenteditable="true">
+			<h1>Hello, world!</h1>
+			<p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+			<p><a class="btn btn-primary btn-large" href="build#">Learn more &raquo;</a></p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!--/span-->
+	<div id="download-layout"><div class="container-fluid"></div></div>
+      </div>
+      <!--/row-->
+    </div><!--/.fluid-container-->
+
+    <div class="modal hide fade" role="dialog" id="downloadModal">
+      <div class="modal-header">
+	<a class="close" data-dismiss="modal">&times;</a>
+	<h3>Download</h3>
+      </div>
+      <div class="modal-body">
+	<div class="alert alert-info">The <strong>.zip</strong> includes the directory structure, css, less and js.</div>
+	<p>This is the generated source, you can copy & paste it in our own HTML.</p>
+	<div class="btn-group">
+	  <button type="button" id="fluidPage" class="active btn btn-info"><i class="icon-fullscreen icon-white"></i> Fluid</button>
+	  <button type="button" class="btn btn-info" id="fixedPage"><i class="icon-screenshot icon-white"></i> Fixed</button>
+	</div>
+	<br /><br />
+	<p><textarea></textarea></p>
+      </div>
+      <div class="modal-footer">
+	<a class="btn btn-primary" id="download" >Download .zip</a>
+	<a class="btn btn-primary" id="downloadhtml" >Download .html only</a>
+	<a class="btn" data-dismiss="modal">Close</a>
+      </div>
+    </div>
+    <div class="modal hide fade" role="dialog" id="shareModal">
+      <div class="modal-header">
+	<a class="close" data-dismiss="modal">&times;</a>
+	<h3>Share</h3>
+      </div>
+      <div class="modal-body">Loading...</div>
+      <div class="modal-footer">
+	<a class="btn" data-dismiss="modal">Close</a>
+      </div>
+    </div>
+    <div class="modal hide fade" role="dialog" id="feedbackModal">
+      <div class="modal-header">
+	<a class="close" data-dismiss="modal">&times;</a>
+	<h3>Feedback</h3>
+      </div>
+      <div class="modal-body">Loading...</div>
+      <div class="modal-footer">
+	<a class="btn btn-primary" id="submitFeedbackButton" >Submit</a>
+	<a class="btn" data-dismiss="modal">Close</a>
+      </div>
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://cdn.transparensee.com/lib/jquery-plugin/touchpunch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="js/jquery.htmlClean.js"></script>
+    <script type="text/javascript" src="js/selector_utils.js"></script>
+    <script type="text/javascript" src="js/layout_manager.js"></script>
+  </body>
+</html>

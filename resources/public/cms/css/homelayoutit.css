@@ -1,0 +1,57 @@
+body {background:#fff;}
+header {background:#006DCC url(../img/header-bg.png); margin-bottom:30px; padding:50px 0 20px;
+-webkit-box-shadow:  0 1px 300px rgba(0, 0, 0, 0.9);
+   -moz-box-shadow:  0 1px 300px rgba(0, 0, 0, 0.9);
+        box-shadow:  0 1px 300px rgba(0, 0, 0, 0.9);
+}        
+
+.navbar p { margin:0; color:#ccc; line-height:40px; font-size:12px; }
+.navbar p a { color:#fff; }
+.navbar .btn-group { padding-top:5px; }
+.navbar .btn-donate {padding: 0 0 0 10px;}
+.navbar .btn-donate form { margin:0;}
+.navbar .btn-donate form button { line-height: 18px; padding: 4px 9px;}
+
+.brand { font-size:100px; line-height:80px; margin:0 0 30px; color:#fff;line-height:1; font-weight:normal;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7); position:relative; left:-10px;
+}
+.brand .label { position:relative; left:5px; top:-6px; padding:5px 10px;
+background:#006DCC url(../img/header-bg.png); 
+	-webkit-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.7);
+   -moz-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.7);
+        box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+/*.brand .beta {display:inline-block; width:48px; height:48px; position:relative; left:0; top:0; background: url(/img/beta.png); }*/
+header .container { /*position:relative;*/}
+header p { color:#fff; font-size:30px; line-height:1.2em; margin-bottom:30px; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);}
+.span6 img {margin-right:20px;}
+.span6 h2 { font-size:28px; padding-top:20px;}
+.span6 p {margin-left:276px;}
+.note-detail { margin-top:50px; color:#fff;}
+.well {background:#66ccff url(../img/header-bg.png);text-shadow: 0 1px 0px rgba(0, 0, 0, 0.7);}
+.note-detail h3 { font-weight:normal;}
+.note-detail a { color:#ddd;}
+.themes { padding-top:0px;}
+/*header .addthis_toolbox { position:absolute; right:10px; top:10px;}*/
+footer {    background-color: #e5e5e5; border-top: 1px solid #ccc; margin-top: 70px; padding: 30px 0 80px;}
+a.language-selected { font-style: italic; font-weight: bold;  }
+.small-width { display:none;}
+
+@media (max-width: 767px) {
+  header, footer {margin-right: -20px;margin-left: -20px; padding:0 20px;}
+  footer { margin-top:20px; padding-top:20px;}
+  .brand { font-size:50px; padding-top:30px;}
+  header p { font-size:20px;}
+  .themes, header p a.btn, .navbar-fixed-bottom .btn-group { display:none;}
+  .navbar-fixed-bottom { margin-top:0;}
+  .note-detail h3 { font-size:18px; }
+  .span6 { clear:left;}
+  
+  .small-width { display:block;}
+
+}
+@media (max-width: 1199px) {
+	.span6 img { float:none;}
+	.span6 p {margin-left:0;}
+}
+.follow-twitter-box {float: right; padding-top: 0 !important; padding-left: 25px;}

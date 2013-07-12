@@ -1,0 +1,42 @@
+<div  class="container-fluid">
+   <div class="row-fluid">	
+     [% INCLUDE modal %]
+   </div>
+</div>
+
+ 
+[% BLOCK modal %]
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  </div>
+  <div class="modal-body">
+    [% INCLUDE lead_form %]
+  </div>
+</div>
+[% END %]
+
+
+[% BLOCK lead_form  %]
+<div class="span8">
+  <div class="alert alert-error" style="display:none">
+    <strong>Ooops!</strong> You did not pass the validation.
+  </div>
+  <div class="alert alert-success" style="display:none">
+    <strong>Success!</strong> You passed the validation.
+  </div>
+  <form class="cmxform" id="lead_form">
+    <fieldset>
+      <legend>For information on how to get help or help a loved one<br/>
+      </legend>
+      <label>First Name</label><input id="lead_first_name" type="text"  class="required"/>
+	  <label>Last Name</label><input id="lead_last_name" type="text"  class="required"/>
+	  <label>Email</label><input id="lead_email" type="text"  class="required email"/>
+	  <label>Phone</label><input id="lead_phone" type="text"  class="required"/>
+	  <label>Zip</label><input id="lead_zip" type="text"  class="required"/>
+      <input type="submit" value="Go" class="btn submit">
+    </fieldset>
+  </form>
+</div>
+</div>
+[% END %]

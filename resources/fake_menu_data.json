@@ -1,0 +1,13 @@
+{
+	"drop_down_menu":[
+	    {"drop_down_menu_name":"Products",
+	     "menu_item":[
+		 {"menu_item_url":"/site/articles/landing-site-builder.html","menu_item_text":"Landing Site Builder"},
+		 {"menu_item_url":"/site/articles/vertical-builder.html","menu_item_text":"Vertical Site Builder"}]},
+	    {"drop_down_menu_name":"Services",
+	     "menu_item":[
+		 {"menu_item_url":"/site/articles/flourish-online.html","menu_item_text":"Flourish Online"},
+		 {"menu_item_text":"Online Advertising Training"}]
+	    }
+	]
+}
