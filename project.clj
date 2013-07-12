@@ -3,6 +3,7 @@
   :url "http://marketwithgusto.com/mgnt/about/development.html"
   :resource-paths ["resources"]
   :uberjar-name ["management-standalone"]
+  :min-lein-version "2.0.0"
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [clj-aws-s3 "0.3.6"]                 
                  [compojure "1.1.5"]
