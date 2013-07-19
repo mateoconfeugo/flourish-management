@@ -6,7 +6,7 @@
         [management.config :only[db-name db-password db-address db-user]]
         [management.models.orm-spec :as orm :only [user profile]]
         [management.views.snippets]
-        [riemann.client :only [send-event tcp-client]]        
+;;        [riemann.client :only [send-event tcp-client]]        
         [korma.db :only [defdb mysql]]
         [korma.core :only[select where with]]))
 

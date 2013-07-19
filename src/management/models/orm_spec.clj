@@ -6,7 +6,7 @@
         [korma.core :only [defentity database insert values has-many many-to-many
                            transform belongs-to has-one fields table prepare pk
                            subselect where belongs-to limit aggregate order]]
-        [riemann.client :only [send-event tcp-client]]        
+;;        [riemann.client :only [send-event tcp-client]]        
         [korma.db :only [defdb mysql]])
   (:require [clojure.core]))
 

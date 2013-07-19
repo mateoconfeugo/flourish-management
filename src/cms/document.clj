@@ -6,6 +6,17 @@
 (defn get-content-document [doc-id])
 (defn get-meta-document [doc-id])
 
+(comment
+(defn process-elements
+  [elements]
+    "Recursively builds up dom rendered cms heirarctical document"
+    (doseq [element elements]
+      (if (contains? element :elements)
+        (process-elements (:elements element))
+        (let [binding (get-dom-binding (:id element))
+              uuid (:uuid binding)]
+          (uuid (:fields element))))))
+)
 (defpipe setup [doc-id channel-id]
   (return 
    (:set semantic-content (get-content-document doc-id))
