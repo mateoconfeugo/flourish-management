@@ -1,4 +1,4 @@
-(ns test.cms.resource.collections
+(ns cms.resource.collections
   (:use [clojure.walk]
         [cms.resources.common :as common]
         [cms.resources.collection :as collection])

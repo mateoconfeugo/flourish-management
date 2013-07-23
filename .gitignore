@@ -5,3 +5,7 @@ pom.xml
 /targets/
 .lein-deps-sum
 *~
+*.DS_Store
+.lein-repl-history
+logs/*
+

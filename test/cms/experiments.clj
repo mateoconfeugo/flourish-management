@@ -1,4 +1,4 @@
-(ns test.cms.experiments
+(ns cms.experiments
   (:import [java.io.FileWriter :as io]))
   (:use [clojure.test :only (is testing deftest)]
         [clojure.java.io]

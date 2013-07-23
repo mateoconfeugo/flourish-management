@@ -1,5 +1,4 @@
-(comment
-(ns test.cms.site-builder
+(ns cms.site-builder
   (:require [clojure.java.io :as io])
   (:use [clojure.test :only (is testing deftest)]
         [clojure.java.io :only[as-file]]
@@ -77,4 +76,3 @@
 (expect true (= 1 sb-process-element-test))
 (expect true (= 1 sb-field-item-model-snippet-test))
 (expect true (= 1 sb-update-landing-site-test))
-)

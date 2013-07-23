@@ -19,7 +19,7 @@
                  [ibdknox/clojurescript "0.0-1534"] ; ClojureScript compiler https://github.com/clojure/clojurescript
                  [korma "0.3.0-RC5"] ; ORM                                
                  [liberator "0.9.0"] ; WebMachine(REST state machine) port to clojure
-                 [me.raynes/fs "1.4.4"] ; File manipulation tools                
+                 [me.raynes/fs "1.4.1"] ; File manipulation tools                
                  [metis "0.3.0"] ; Form validation                
                  [mysql/mysql-connector-java "5.1.6"] ; mysql jdbc                 
                  [org.apache.httpcomponents/httpclient-osgi "4.2.5"]

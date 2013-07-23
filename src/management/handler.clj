@@ -30,6 +30,7 @@
 (def app (handler/site (routes
                         user-mgmt-routes
                         document-routes
+                        cms.controllers.site-builder/editor-routes                        
                         editor-routes                                     
                         public-routes
                         config-route

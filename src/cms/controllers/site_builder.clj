@@ -1,8 +1,8 @@
 (ns cms.controllers.site-builder
   (:use [cheshire.core :only [parse-string generate-string]]
         [cms.views.builder :only [render]]
-        [compojure.core :only [defroutes GET DELETE POST PUT]]
-        [ring.util.response :only [response content-type]]))
+        [compojure.core :only [defroutes GET DELETE POST PUT]]))
+        
 
 (defroutes editor-routes   (GET "/cms/sitebuilder"  req (render req)))
 

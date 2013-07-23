@@ -4,7 +4,8 @@
    access html page files, market vector and matrix json file"
   (:require [clojure.java.io :as io])  
   (:use [cheshire.core :only (parse-string parse-stream)]
-        [me.raynes.fs :only(directory?) :as fs]))
+        [fs.core :only(directory?) :as fs]))        
+;;        [me.raynes.fs :only(directory?) :as fs]))
 
 ;; BACK-END HELPER FUNCTIONS
 (defn str->int [str]

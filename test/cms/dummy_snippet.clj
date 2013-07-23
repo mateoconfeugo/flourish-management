@@ -1,4 +1,4 @@
-(ns test.cms.dummy-snippet
+(ns cms.dummy-snippet
   (:use [net.cgrand.enlive-html :as html]
         [cheshire.core]
         [clojure.java.io])

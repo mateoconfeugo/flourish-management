@@ -6,9 +6,9 @@
         [clojure.java.io]))
 
 (defn required-fields? [model]
-   (if  (some #(= false %) (map #(contains? model %) [:layout :xpath :dom]))
-      false
-      true))
+  (if  (some #(= false %) (map #(contains? model %) [:layout :xpath :dom]))
+    false
+    true))
 
 (defn validate [model]
   (assoc model  :status (required-fields? model)))
@@ -27,18 +27,18 @@
 (defn  push-to-editor [model]
   (assoc model :site-html 1))
 
-  (defn save-landing-site
-    [{:keys [landing-site-id model]}]
-    (-> model
-        validate
-        create-xpath-uuid-pairs
-        update-landing-site-framework-config
-;;        update-base-html
-        push-to-editor))
+(defn save-landing-site
+  [{:keys [landing-site-id model]}]
+  (-> model
+      validate
+      create-xpath-uuid-pairs
+      update-landing-site-framework-config
+      ;;        update-base-html
+      push-to-editor))
 
-  (defn save-landing-site-test
-    [xpath]
-    (generate-string  {:uuid (new-uuid) :xpath xpath}))
+(defn save-landing-site-test
+  [xpath]
+  (generate-string  {:uuid (new-uuid) :xpath xpath}))
 
 ;;  [{:keys [uuid xpath dom layout] :as model}]
 (defn update-landing-site
@@ -111,4 +111,4 @@
   (defpipeline edit-landing-site
     update-component-list
     push-to-editor)
-)
+  )
