@@ -4,6 +4,14 @@
             [com.ashafa.clutch :as clutch])
   (:import (java.net URI)))
 
+(defn create-user-database
+  [username]
+  (clutch/create! (clutch/couch (str "gusto-cms-" username ))))
+
+(defn get-user-database
+  [username]
+  (clutch/create! (clutch/couch  (str "gusto-cms-" username))))
+
 (def db-resource (assoc (cemerick.url/url "http://localhost:5984/" "gusto-cms") :username nil :password nil))
 
 (defn db [] (clutch/get-database db-resource))

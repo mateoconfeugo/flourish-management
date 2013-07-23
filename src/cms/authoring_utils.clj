@@ -18,6 +18,11 @@
 ;  (let [uniq? (every? #(false? (= % rev-id)) @*revisions*)]
 ;    (if uniq? (do (swap! *revisions* conj rev-id) true) false)))
 
+
+(defn new-uuid []
+  "Generate a unique id"
+  (java.util.UUID/randomUUID))
+
 (defn in?
   "true if seq contains elm"
   [seq elm]
