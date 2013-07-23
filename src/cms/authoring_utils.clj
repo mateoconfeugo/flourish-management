@@ -127,28 +127,28 @@
     (attach-code-file (merge args {:attachment-key ak :db db :file (save-s-expression tf form)}))))
 
 (defn save-snippet-html
-  [db doc-or-id uuid html]
+  [db doc-or-id html]
   "Generate the html file that the snippet uses"
-  (let [doc (if (map? doc-or-id) doc-or-id (clutch/get-document db doc-or-id))]
-    (clutch/update-document db doc :html html)))
+  (let [doc (if (map? doc-or-id) (clutch/get-document db (:_id doc-or-id)) (clutch/get-document db doc-or-id))]
+    (clutch/update-document db doc {:html html})))
 
 (defn get-snippet-html
-  [{:keys [doc-or-id db] :as args}]
-    (if (map? doc-or-id) 
-      (:html doc-or-id)
-      (:html (get db doc-or-id))))
+  [db doc-or-id]
+  (if (map? doc-or-id)
+    (:html (clutch/get-document db (:_id doc-or-id)))    
+    (:html (get db doc-or-id))))
 
 (defn save-snippet-css
-  [{:keys [db doc-or-id uuid css] :as args}]
-  "Generate the html file that the snippet uses"
-  (let [doc (if (map? doc-or-id) doc-or-id (clutch/get-document db doc-or-id))]
-    (clutch/update-document db doc :css css)))
+  [db doc-or-id css]
+  "save the css file that the snippet uses"
+  (let [doc (if (map? doc-or-id) (clutch/get-document db (:_id doc-or-id)) (clutch/get-document db doc-or-id))]
+    (clutch/update-document db doc {:css css})))
 
 (defn get-snippet-css
-  [{:keys [doc-or-id db] :as args}]
-    (if (map? doc-or-id)
-      (:css doc-or-id)
-      (:css (get db doc-or-id))))
+  [db doc-or-id]
+  (if (map? doc-or-id)
+    (:css (clutch/get-document db (:_id doc-or-id)))    
+    (:css (get db doc-or-id))))
 
 (defn load-snippet
   [{:keys [db doc-or-id uuid] :as args}]
@@ -166,8 +166,11 @@
   (let [doc (if (map? doc-or-id) (clutch/get-document db (:_id doc-or-id)) (clutch/get-document db doc-or-id))
         updated (clutch/with-db (:db_name (database-info db))
                   (clutch/update-document doc {:css css :html html}))
-        doc (clutch/get-document db (:_id doc-or-id))]        
-    (save-snippet-form {:db db :doc-or-id doc :uuid uuid :form form})))
+        doc (clutch/get-document db (:_id doc-or-id))        
+        _ (save-snippet-form {:db db :doc-or-id doc :uuid uuid :form form})
+        _ (save-snippet-html html)
+        _ (save-snippet-css css)]
+    doc))
 
 (defn create-template-form
   [{:keys [template-path output rules namespace] :as model}]

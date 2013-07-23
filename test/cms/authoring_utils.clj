@@ -72,19 +72,37 @@
 
 ;;# Test saving and retreiving all the resource related to a snippet
 (def db (clutch/create! (clutch/couch (:db-name test-cfgs))))
-(def test-doc (clutch/put-document db {:javascript [] :css [] :snippets []}))
+(def test-doc (clutch/put-document db {:javascript [] :css "" :html ""}))
 (def test-doc (clutch/get-document db (:_id test-doc)))
-(save-snippet {:db db
-               :doc-or-id test-doc
-               :selector selector
-               :form test-form
-               :uuid test-uuid
-               :rule test-rule
-               :html (:layout test-cfgs)
-               :css ".div"})
+(def saved-snippet-doc (save-snippet {:db db
+                                      :doc-or-id test-doc
+                                      :selector selector
+                                      :form test-form
+                                      :uuid test-uuid
+                                      :rule test-rule
+                                      :html (:dom test-cfgs)
+                                      :css ".div { background-color: yellow;}"}))
+
 (expect true (= ((get db (:_id test-doc)) :html) (:layout test-cfgs)))
 (def retreived-snippet (load-snippet {:db db :doc-or-id test-doc :uuid 1}))
 (expect true (= (:html retreived-snippet) (:layout test-cfgs)))
+
+;;# Test editing the css and html of the snippet
+(def doc-or-id  saved-snippet-doc)
+(def doc (if (map? doc-or-id) (clutch/get-document db (:_id doc-or-id)) (clutch/get-document db doc-or-id)))
+(def result (clutch/update-document db doc :html html))
+(def test-html "<aside><article>Why?</article></aside>")
+(save-snippet-html db test-doc  test-html)
+(def retreived-html (:html (clutch/get-document db (:_id test-doc))))
+(expect true (= test-html retreived-html))
+(def retreived-html (get-snippet-html db  test-doc))
+(expect true (= test-html retreived-html))
+(def test-css "aside { color: gray;}")
+(save-snippet-css db test-doc  test-css)
+(def retreived-css (:css (clutch/get-document db (:_id test-doc))))
+(expect true (= test-css retreived-css))
+(def retreived-css (get-snippet-css db  test-doc))
+(expect true (= test-css retreived-css))  
 
 ;;# Test reading snippet rules to an enlive template
 (def template-form (create-template-form {:template-path (str (System/getProperty "user.dir") "/resources/base_template.clj")
