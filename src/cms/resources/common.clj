@@ -55,15 +55,15 @@
 ;; TODO base version
 ;; TODO provide slugify a uniqueness function for the type
 (defn create-with-db
-  [{resource-name :name provided-slug :slug :as props} provided-type]
+  [db resource-name provided-slug  props provided-type]
   (let [slug (or provided-slug (slugify resource-name (name provided-type)))]
-    (clutch/put-document {:data (merge props {:slug slug :type (name provided-type)})})))
+    (clutch/put-document db {:data (merge props {:slug slug :type (name provided-type)})})))
 
 (defn create
   "Create a resource in the DB, returning the property map for the resource."
-  [props provided-type]
-  (clutch/with-db (db)
-    (create-with-db props provided-type)))
+  [db props provided-type]
+  (create-with-db db  (:name props) (:slug props) props provided-type))
+
 
 (defn retrieve [id]
   (clutch/with-db (db)

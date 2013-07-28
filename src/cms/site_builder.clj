@@ -3,9 +3,10 @@
    made up of the associated documents, the landing site dom, the
    mapping between the two. "
   (:use [cheshire.core :only [parse-string generate-string]]
+        [cms.authoring-utils]
         [clojure.java.io]))
 
-(defn required-fields? [model]
+(defn required-fields? [model hierarchy]
   (if  (some #(= false %) (map #(contains? model %) [:layout :xpath :dom]))
     false
     true))

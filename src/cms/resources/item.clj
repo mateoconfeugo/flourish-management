@@ -5,8 +5,8 @@
 
 (def item-media-type "application/vnd.cms.item+json;version=1")
 
-(defn- item-doc [coll-id item-slug]
-  (:doc (first (clutch/get-view "item" :all {:key [coll-id, item-slug] :include_docs true}))))
+(defn item-doc [db coll-id item-slug]
+  (:doc (first (clutch/get-view db "item" :all {:key [coll-id, item-slug] :include_docs true}))))
 
 (defn- item-from-db 
   "Turn an item from its CouchDB map representation into its CMS map representation."
@@ -18,20 +18,20 @@
   item name and an optional map of properties. If :slug is included in the properties
   it will be used as the item's slug, otherwise the slug will be created from
   the name."
-  ([coll-slug item-name] (create-item coll-slug item-name {}))
-  ([coll-slug item-name props]
-    (collection/with-collection coll-slug (common/db)
-      (when-let [item (common/create-with-db (merge props {:collection (:id collection) :name item-name}) :item)]
+  ([db coll-slug item-name] (create-item db coll-slug item-name {}))
+  ([db coll-slug item-name props]
+     (let [collection (collection/get-collection coll-slug db)]
+       (when-let [item (common/create-with-db db (:name props) coll-slug (merge props {:collection (:id collection) :name (str item-name)}) :item)]
         (item-from-db coll-slug item)))))
 
 (defn get-item
   "Given the slug of the collection containing the item and the slug of the item,
   return the item as a map, or return :bad-collection if there's no collection with that slug, or
   nil if there is no item with that slug."
-  [coll-slug item-slug] 
-    (collection/with-collection coll-slug (common/db)
-      (when-let [item (item-doc (:id collection) item-slug)]
-        (item-from-db coll-slug item))))
+  [db coll-slug item-slug]
+  (let [collection (collection/get-collection coll-slug db)]  
+    (when-let [item (item-doc db (:id collection) item-slug)]
+      (item-from-db coll-slug item))))
 
 ;;(get-item "test" "bar")
 

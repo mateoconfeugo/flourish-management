@@ -44,9 +44,9 @@
 ;         :init management.handler/init
 ;         :destroy management.handler/destroy}
          }
-  :repositories [["releases" {:url "s3p://marketwithgusto.repo/releases"
-                             :username "AKIAJ5RLKVIVMK2VBA6A"
-                             :passphrase "CEKqv6Ka/0BDc+UcbBpm3wycu25Wb7M0DywW7pE4"}]]
+;  :repositories [["releases" {:url "s3p://marketwithgusto.repo/releases"
+;                             :username "AKIAJ5RLKVIVMK2VBA6A"
+;                             :passphrase "CEKqv6Ka/0BDc+UcbBpm3wycu25Wb7M0DywW7pE4"}]]
   :main management.handler
   :profiles  {:dev {:dependencies [[ring-mock "0.1.3"]
                                    [ring/ring-devel "1.1.8"]

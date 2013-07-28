@@ -1,10 +1,10 @@
-(ns cms.authoring-utils
-  (:refer-clojure :exclude [assoc! conj! dissoc! name parents]) ; suppress the shadowing warning  
-  (:require [clojure.core :as core]
-            [cms.authoring-utils]) 
+(ns test.cms.authoring-utils
+  (:refer-clojure :exclude [assoc! conj! dissoc! name parents])
+  (:require [clojure.core :as core]) 
   (:import [java.io BufferedReader InputStreamReader])
   (:use [clojure.test :only (is testing deftest)]
         [clojure.java.io]
+        [cms.authoring-utils]
         [expectations]
         [me.raynes.fs :as fs :exclude [copy file]]                        
         [net.cgrand.enlive-html :as html]
@@ -38,7 +38,7 @@
 (def test-rule (list '[:div.uuid-1] '(html/content model)))
 
 ;;# TEST First lets see if we can create some snippet code
-(def test-form (cms.authoring-utils/update-snippet-form {:uuid test-uuid :tmpl-path resource-tmpl-path :selector selector :rule test-rule}))
+(def test-form (update-snippet-form {:uuid test-uuid :tmpl-path resource-tmpl-path :selector selector :rule test-rule}))
 (eval test-form)
 (expect true (= "bacon" (first (:content (first (snippet-1 "bacon"))))))
 
@@ -90,7 +90,7 @@
 ;;# Test editing the css and html of the snippet
 (def doc-or-id  saved-snippet-doc)
 (def doc (if (map? doc-or-id) (clutch/get-document db (:_id doc-or-id)) (clutch/get-document db doc-or-id)))
-(def result (clutch/update-document db doc :html html))
+(def result (clutch/update-document db doc {:html html}))
 (def test-html "<aside><article>Why?</article></aside>")
 (save-snippet-html db test-doc  test-html)
 (def retreived-html (:html (clutch/get-document db (:_id test-doc))))

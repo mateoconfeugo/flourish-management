@@ -9,9 +9,9 @@
   "Create a new collection using the specified name and optional map of properties.
   If :slug is included in the properties it will be used as the collection's slug,
   otherwise one will be created from the name."
-  ([name] (create-collection name {}))
-  ([name props] (when-let [collection (common/create (merge props {:name name}) :collection)]
-    (common/map-from-db collection))))
+  ([db name] (create-collection db name  {}))
+  ([db name props] (when-let [collection (common/create db (merge props {:name name}) :collection)]
+                     (common/map-from-db collection))))
 
 (defn get-collection
   "Given the slug of the collection, return the collection as a map, or nil if there's no collection with that slug"
@@ -69,6 +69,10 @@
 
 (defn get-collection-items [slug db]
   (get-collection-items-by-id (:id (get-collection slug db)) db))
+
+(defn get-collection-item [db coll-slug slug]
+  (let [items (get-collection-items coll-slug db)]
+      (first (filter #(= slug (-> % :data :name)) items))))
 
 
 (comment

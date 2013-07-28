@@ -1,4 +1,4 @@
-(ns cms.site-builder
+(ns cms.document
   "Test Business Domain Entities and Composition Heirarchy of
    the operations around the landing site"
   (:require [clojure.string :as str]

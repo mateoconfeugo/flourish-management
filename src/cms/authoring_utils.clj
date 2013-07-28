@@ -1,7 +1,7 @@
 (ns cms.authoring-utils
   "Functions and macros that help generate the clojure code
    and storing and retreiving code from the document store"
-  (:refer-clojure :exclude [assoc! conj! dissoc! name parents]) ; suppress the shadowing warning
+  (:refer-clojure :exclude [assoc! conj! dissoc! name parents])
   (:require [clojure.core :as core]) 
   (:import [org.apache.commons.codec.binary Base64])
   (:use [cheshire.core :only [parse-string generate-string]]
@@ -10,7 +10,7 @@
         [cms.site]
         [com.ashafa.clutch :as clutch :only(get-document put-attachment database-info)]
         [data-formating :only [decode-str]]
-        [me.raynes.fs :exclude [copy file]]                
+        [me.raynes.fs :as fs :exclude [copy file]]                
         [net.cgrand.enlive-html :as html]
         [validation]))
 
@@ -21,7 +21,7 @@
 
 (defn new-uuid []
   "Generate a unique id"
-  (java.util.UUID/randomUUID))
+  (.toString (java.util.UUID/randomUUID)))
 
 (defn in?
   "true if seq contains elm"
@@ -173,8 +173,8 @@
                   (clutch/update-document doc {:css css :html html}))
         doc (clutch/get-document db (:_id doc-or-id))        
         _ (save-snippet-form {:db db :doc-or-id doc :uuid uuid :form form})
-        _ (save-snippet-html html)
-        _ (save-snippet-css css)]
+        _ (save-snippet-html db doc html)
+        _ (save-snippet-css db doc css)]
     doc))
 
 (defn create-template-form
