@@ -8,4 +8,7 @@ pom.xml
 *.DS_Store
 .lein-repl-history
 logs/*
-
+out/*
+src/cfg/current.clj
+test/generated_enlive_template.clj
+target
