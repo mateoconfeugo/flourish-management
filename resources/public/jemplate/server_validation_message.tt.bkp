@@ -1,9 +1,0 @@
-<div  class="container-fluid">
-   <div class="row-fluid">	
-     <ul>
-     [% FOREACH i IN errors.keys %]
-         <li> [% i %]  [% errors.$i %]</li>
-     [% END %]
-     </ul>
-   </div>
-</div>
