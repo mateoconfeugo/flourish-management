@@ -18,17 +18,18 @@
                              :username :env
                              :passphrase :env}]]
   :main management-host.handler
+  :mailing-list {:name "management gui dev mailing list"
+                 :archive "http://marketwithgusto.com/mgmt-gui-mailing-list-archives"
+                 :other-archives ["http://marketwithgusto.com/mgmt-gui-list-archive2"
+                                  "http://marketwithgusto.com/mgmt-gui-list-archive3"]
+                 :post "list@marketwithgusto.com"
+                 :subscribe "list-subscribe@marketwithgusto.com"
+                 :unsubscribe "list-unsubscribe@marketwithgusto.com"}  
   :profiles  {:dev {:dependencies [[ring-mock "0.1.3"]
                                    [ring/ring-devel "1.1.8"]
                                    [clj-webdriver "0.6.0"]                 
                                    [expectations "1.4.33"]
                                    [org.clojure/tools.trace "0.7.5"]
-                                   [vmfest "0.3.0-alpha.5"]]}
-              :mailing-list {:name "management gui dev mailing list"
-                             :archive "http://marketwithgusto.com/mgmt-gui-mailing-list-archives"
-                             :other-archives ["http://marketwithgusto.com/mgmt-gui-list-archive2"
-                                              "http://marketwithgusto.com/mgmt-gui-list-archive3"]
-                             :post "list@marketwithgusto.com"
-                             :subscribe "list-subscribe@marketwithgusto.com"
-                             :unsubscribe "list-unsubscribe@marketwithgusto.com"}})
+                                   [vmfest "0.3.0-alpha.5"]]}})
+
 
