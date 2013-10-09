@@ -1,0 +1,45 @@
+{
+	"drop_down_menu":[
+	    {"drop_down_menu_name":"Landing Sites",
+	     "menu_item":[
+		 {"menu_item_url":"/site-builder","menu_item_text":"List"},
+		 {"menu_item_url":"/site-builder","menu_item_text":"Site Builder"},
+		 {"menu_item_url":"/site-builder/","menu_item_text":"Site Publisher"}]},
+	    {"drop_down_menu_name":"Content Management",
+	     "menu_item":[
+		 {"menu_item_url":"/cms/","menu_item_text":"New Document"},
+		 {"menu_item_url":"/cms/","menu_item_text":"Story Builder"},
+		 {"menu_item_url":"/cms/", "menu_item_text":"Search Archive"}]},
+	    {"drop_down_menu_name":"Lead Generation",
+	     "menu_item":[
+		 {"menu_item_url":"/lead-generation/","menu_item_text":"Active Leads"},
+		 {"menu_item_url":"/lead-generation/", "menu_item_text":"Search"}]},
+	    {"drop_down_menu_name":"Heat Mapping",
+	     "menu_item":[
+		 {"menu_item_url":"/heat-mapping/","menu_item_text":"Active Maps"},
+		 {"menu_item_url":"/site-builder/", "menu_item_text":"Search"}]},
+	    {"drop_down_menu_name":"Search Engine Optimization",
+	     "menu_item":[
+		 {"menu_item_url":"/seo/","menu_item_text":"Optimize Landing Site"},
+		 {"menu_item_url":"/seo/", "menu_item_text":"Editor"}]},
+	    {"drop_down_menu_name":"Publisher",
+	     "menu_item":[
+		 {"menu_item_url":"/publisher/","menu_item_text": "New Vertical Site"},
+		 {"menu_item_url":"/publisher/","menu_item_text": "Convert Existing Site"},
+		 {"menu_item_url":"/Publisher/", "menu_item_text":"Editor"}]},
+	    {"drop_down_menu_name":"Advertiser",
+	     "menu_item":[
+		 {"menu_item_url":"/advertiser/","menu_item_text":"Campaign Manager"},
+		 {"menu_item_url":"/advertiser/","menu_item_text":"Ad Builder"},
+		 {"menu_item_url":"/advertiser/","menu_item_text":"Keyword Manager"},
+		 {"menu_item_url":"/advertiser/","menu_item_text":"Reporting"},
+		 {"menu_item_url":"/advertiser/","menu_item_text":"Import Bing  Campaign"},
+		 {"menu_item_url":"/advertiser/", "menu_item_text":"Import Google Ad words Campaign"}]},
+	    {"drop_down_menu_name":"Crowd Builder",
+	     "menu_item":[
+		 {"menu_item_url":"/social-media/blog","menu_item_text": "Blog"},
+		 {"menu_item_url":"/social-media/facebook","menu_item_text": "Facebook"},
+		 {"menu_item_url":"/social-media/twitter","menu_item_text": "Twitter"},
+		 {"menu_item_url":"/social-media/linked-in", "menu_item_text":"Linked-In"}]}
+
+]}

@@ -1,0 +1,84 @@
+{
+ :site-builder-port 8080
+ :cookie-name "gusto"
+ :session-key "s0mes3cret"
+ :session-max-age-seconds 1209600
+ :db-port  3306
+ :db-name  "management"
+ :db-user  "root"
+ :db-password "test123"
+ :schema-file "resources/mgmt.sql"
+ :mgmt-webapp-port 3000
+ :mgmt-db-user "root"
+ :mgmt-db-password "test123"
+ :mgmt-db-name "management"
+ :mgmt-db-port 3000
+ :db-group-name "mgmt-db"
+ :db-settings {:group-spec-name  "mgmt-db"
+               :schema-file "resources/mgmt.sql"
+               :db-username "root"
+               :db-password "test1234"
+               :db-name "management"
+               :owner "pallet-admin"
+               :provider :vmfest
+               :node-count 1}
+ ;; monitoring
+ :monitoring-settings  {:riemann-cmd "nohup ~/bin/riemann ~/etc/riemann.config"
+                        :dist-url "http://aphyr.com/riemann/riemann-0.2.1.tar.bz2"
+                        :local-cfg-file "resources/riemann.config"
+                        :remote-cfg-file "~/etc/riemann.config"
+                        :user "riemann"}
+ ;; daemontools
+ ;; TODO: remove the dependency on rsync to transfer directory use the same stuff as cms
+ :rsync-from-dir  "resources/run"
+ :rsync-to-dir  nil
+
+ ;; Dev Ops configuration
+ :install-owner "pallet-admin"
+ :local-cms-dir "resources/site.tgz"
+ ;;management app
+ :remote-root-dir nil
+ :remote-cfg-dir nil
+ :remote-jar  "management.jar"
+ :local-jar  "target/management-0.1.0-standalone.jar"
+ :app-launch-cmd  "java -jar /home/pallet-admin/management.jar"
+ :delivery-label "mgmt-delivery"
+
+ :management-settings {:db-name "management"
+                       :db-username "root"
+                       :db-password "test123"
+                       :owner "pallet-admin"
+                       :group-spec-name "mgmt-delivery"
+                       :local-jar "target/management-0.1.0-standalone.jar"
+                       :remote-jar "management.jar"
+                       :root-dir nil
+                       :bin-dir nil
+                       :cfg-dir nil
+                       :rsync-from nil
+                       :rsync-to nil
+                       :cms-site-tgz-url "http://ops1.causalmarketing.com:8081/cms-sites/site.tgz"
+                       :cms-local-dir  nil
+                       :cms-remote-dir nil
+                       :dist-url nil
+                       :node-spec nil
+                       :node-count 1
+                       :monitoring-cfg-dir nil}
+ ;; Test configuration
+ :test-users {"root" {:username "root"
+                      :password "sa"
+                      :roles #{:admin}}
+              "paul" {:username "paul"
+                      :password "sa"
+                      :roles #{:publisher}}
+              "ann" {:username "ann"
+                     :password "sa"
+                     :roles #{:advertiser}}
+              "carl" {:username "carl"
+                      :password "sa"
+                      :roles #{:content-provider}}
+              "freddy" {:username "freddy"
+                        :password "sa"
+                        :roles #{:feed-provider}}
+              "jane" {:username "jane"
+                      :password "sa"
+                      :roles #{:user}}}}
